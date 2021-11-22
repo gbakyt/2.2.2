@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Table of cars</h1>
+<table border="7" width="100%" style="background-color:#b44848" cellspacing="7">
+    <col style="width:20%">
+    <col style="width:40%">
+    <col style="width:40%">
+    <tr>
+        <th bgcolor="#9acd32">Id</th>
+        <th bgcolor="#9acd32">Model</th>
+        <th bgcolor="#9acd32">Series</th>
+    </tr>
+    <tr th:each="car :${resultList}"
+        class="row" th:classappend="${car} ? 'odd-row' : 'even-row'">
+        <td th:utext="${car.getId()}">Id</td>
+        <td th:utext="${car.getModel()}">Model</td>
+        <td th:utext="${car.getSeries()}">Email</td>
+    </tr>
+</table>
+</body>
+</html>
